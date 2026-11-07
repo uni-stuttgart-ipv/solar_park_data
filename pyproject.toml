@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "solar-park-data"
+dynamic = ["version"]
+description = 'Read data from the ipv rooftop solar park'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [{ name = "Brian Carlsen", email = "carlsen.bri@gmail.com" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/uni-stuttgart-ipv/solar-park-data#readme"
+Issues = "https://github.com/uni-stuttgart-ipv/solar-park-data/issues"
+Source = "https://github.com/uni-stuttgart-ipv/solar-park-data"
+
+[tool.hatch.version]
+path = "src/solar_park_data/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = ["mypy>=1.0.0"]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/solar_park_data tests}"
+
+[tool.coverage.run]
+source_pkgs = ["solar_park_data", "tests"]
+branch = true
+parallel = true
+omit = ["src/solar_park_data/__about__.py"]
+
+[tool.coverage.paths]
+solar_park_data = [
+  "src/solar_park_data",
+  "*/solar-park-data/src/solar_park_data",
+]
+tests = ["tests", "*/solar-park-data/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
