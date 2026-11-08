@@ -22,7 +22,10 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = ["influxdb3-python", "boto3", "mypy-boto3-s3", "pyarrow"]
+
+[dependency-groups]
+dev = ["pytest"]
 
 [project.urls]
 Documentation = "https://github.com/uni-stuttgart-ipv/solar-park-data#readme"

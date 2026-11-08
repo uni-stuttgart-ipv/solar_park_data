@@ -1,6 +1,6 @@
 # solar_park_data
 
-> For access to our data please email `sekretariat@ipv.uni-stuttgart.de`.
+> For access to our data please email sekretariat@ipv.uni-stuttgart.de.
 
 Read data from the ipv's rooftop solar park.
 
@@ -24,6 +24,14 @@ pip install git+https://github.com/uni-stuttgart-ipv/solar_park_data.git
 + Solar spectrum
 + Relative humidity
 + Ambient temperature
+
+## Testing
+
+> Use `pytest` for testing.
+
+You must setup environment variables with API tokens before testing.
++ **INFLUXDB_TOKEN**
++ **AWS_TOKEN**
 
 ## License
 
